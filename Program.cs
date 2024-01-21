@@ -17,11 +17,26 @@ System.Console.WriteLine("Sum of odd numbers is : " +sumOFOddNumbers);
 
 System.Console.WriteLine(" \n \t Homework 2");
   int[] myArray = { -2, 3, -5, 334, 45, 432, 556, 32, 34, 43, 343, 4, 35, 644, 32, 8, };
-  int arrayMax = myArray.Max();
-  int arrayMin = myArray.Min();
-  
-  int minMax = arrayMax * arrayMin;
-  Console.WriteLine($"Multiplying the max and min values of the arrays is equal to {arrayMax} x {arrayMin} = {arrayMax*arrayMin}");
+
+  int minValue = myArray[0];
+  int maxValue = myArray[0];
+for (i = 1; i < myArray.Length; i++)
+{
+  if (myArray[i] < minValue )
+  {
+    minValue = myArray[i];
+  }
+}
+
+for (i = 1; i < myArray.Length ; i++)
+{
+  if( myArray[i] > maxValue)
+  {
+    maxValue = myArray[i];
+  }
+}
+int result = maxValue * minValue;
+Console.WriteLine($"Multiplying the max and min values of the arrays is equal to {minValue} x {maxValue} = {result}");
 
 
 System.Console.WriteLine(" \n \t Homework 3");
