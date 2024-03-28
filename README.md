@@ -1,2 +1,2 @@
 # Vazifa-MohirDEV
-Tasks from MohirDEV
+OOP Task1
