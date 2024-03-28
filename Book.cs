@@ -4,15 +4,15 @@ class Book
        private int BookPage { get; set; }
        private string BookName { get; set; }
 
-       public Book(string nameOfBook)
+       public Book(string bookName)
        {
-           BookName = nameOfBook; 
+           this.BookName = bookName; 
            System.Console.WriteLine("Your choise: " + BookName);
        }     
 
-       static public string ChooseBook(int numberOfBook)
+       static public string ChooseBook(int bookNumber)
        {
-    string chosenBook = numberOfBook switch
+        string chosenBook = bookNumber switch
            {
                1 => "Ikki Eshik Orasi",
                2 => "O`tgan Kunlar",
@@ -22,64 +22,67 @@ class Book
            return chosenBook;
        }
 
-        public void PrintBook (int numberOfBook )
-
+        public void PrintBook (int bookNumber)
         {
-            if(numberOfBook > 2)
-            {
-              Print1984();
+            if(bookNumber < 2)
+            {    
+                PrintBook1();   
             }
-            else if(numberOfBook == 2)
-            {
-                PrintOtganKunlar ();
+            else if(bookNumber == 2)
+            {   
+                 PrintBook2();  
             }
             else
-            {
-                PrintIkkiEshikOrasi ();
+            {   
+                 PrintBook3();  
             }        
         }
 
-        public void PrintPageNumber(int numberOfBook)
+        public void PrintPageNumber(int bookNumber)
         {
-            int BOOK_PAGE =BookPages(numberOfBook);
-            Console.WriteLine($"Page of {BookName} is {BOOK_PAGE} ");
+            int bookPage = BookPages(bookNumber);
+            Console.WriteLine($"Page of {BookName} is {bookPage} ");
         }
       
-         private int BookPages(int numberOfBook)
+         private int BookPages(int bookNumber)
        {
-        if(numberOfBook > 2)
+        if(bookNumber < 2)
             {
-              BookPage = 276;
+              BookPage  = 524;
             }
-            else if(numberOfBook == 2)
+            else if(bookNumber == 2)
             {
-                BookPage = 456;
+                BookPage  = 456;
             }
             else
             {
-               BookPage = 524;
+               BookPage  = 276;
             }        
-        return BookPage ; 
-       }      
-         private void PrintOtganKunlar ()
-        {
-            Console.WriteLine($"Author of {BookName} is \"Abdulla Qodiriy\"");
-            Console.WriteLine("Published in 1925 y.");
-            Console.WriteLine("You can buy it for 12$");
-        }
-         private void Print1984 ()
-        {
-            Console.WriteLine($"Author of {BookName} is \"Geaorge Orwell\"");
-            Console.WriteLine("Published in 1949 y.");
-            Console.WriteLine("You can buy it for 8$");
-        }
-        private void PrintIkkiEshikOrasi ()
+        return BookPage  ; 
+       }  
+
+        private void PrintBook1()
         {
             Console.WriteLine($"Author of {BookName} is \"O`tkir Hoshimov\"");
             Console.WriteLine("Published in 1986 y.");
             Console.WriteLine("You can buy it for 15$");
         }
+         private void PrintBook2()
+        {
+            Console.WriteLine($"Author of {BookName} is \"Abdulla Qodiriy\"");
+            Console.WriteLine("Published in 1925 y.");
+            Console.WriteLine("You can buy it for 12$");
+        }
+
+         private void PrintBook3()
+        {
+            Console.WriteLine($"Author of {BookName} is \"Geaorge Orwell\"");
+            Console.WriteLine("Published in 1949 y.");
+            Console.WriteLine("You can buy it for 8$");
+        }   
 }  
+
+
 
 
 
